@@ -3,12 +3,11 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const name = "다솜";
+  const name = '리액트';
   return (
     <>
-      <h1>안녕 {name}!</h1>
-      <h2>잘 작동하니?</h2>
-    </>
+      {name === '리액트' ? (<h1>리액트입니다</h1>) : (<h2>리액트가 아닙니다</h2>)}
+     </>
   );
 }
 
