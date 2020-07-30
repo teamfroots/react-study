@@ -3,12 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const name = '리액트';
-  return (
-    <>
-      {name === '리액트' && (<h1>리액트입니다</h1>)}
-     </>
-  );
+  const name2 = undefined;
+  return (<div>{name2 || "값을 못찾겠어요"}</div>);
 }
 
 export default App;
