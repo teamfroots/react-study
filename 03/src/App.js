@@ -1,21 +1,8 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import MyComponent from "./MyComponent";
 
-// function App() {
-//   const name = "리액트";
-//   return (
-//     <>
-//       <div>{name}</div>
-//     </>
-//   );
-// }
-
-class App extends Component {
-  render() {
-    const name2 = "뤼액트";
-    return <div>{name2}</div>;
-  }
-}
+const App = () => {
+  return <MyComponent />;
+};
 
 export default App;
