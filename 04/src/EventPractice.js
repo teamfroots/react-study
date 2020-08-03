@@ -7,6 +7,7 @@ class EventPractice extends Component {
 
   constructor(props) {
     super(props);
+    /* 콜백에서 this가 작동하려면 아래와 같이 바인딩해줘야함 */
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
