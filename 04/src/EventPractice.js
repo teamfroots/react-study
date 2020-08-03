@@ -2,25 +2,27 @@ import React, { Component } from "react";
 
 class EventPractice extends Component {
   state = {
-    message: "",
+    welcome: "",
   };
   render() {
     return (
       <div>
         <h1>이벤트 연습</h1>
+        <h2></h2>
         <input
           type="text"
-          name="message"
-          placeholder="아무거나 입력하세요"
-          value={this.state.message}
+          name="welcome"
+          value={this.state.welcome}
           onChange={(e) => {
-            this.setState({ message: e.target.value });
+            this.setState({ welcome: e.target.value });
           }}
         ></input>
         <button
           onClick={() => {
-            alert(this.state.message);
-            this.setState({ message: "" });
+            this.setState({ welcome: "" });
+            console.log(this.state.welcome);
+            const h2 = document.querySelector("h2");
+            h2.innerText = this.state.welcome;
           }}
         >
           enter
