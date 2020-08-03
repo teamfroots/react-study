@@ -4,6 +4,26 @@ class EventPractice extends Component {
   state = {
     welcome: "",
   };
+
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      welcome: e.target.value,
+    });
+  }
+
+  handleClick() {
+    this.setState({ welcome: "" });
+    console.log(this.state.welcome);
+    const h2 = document.querySelector("h2");
+    h2.innerText = this.state.welcome;
+  }
+
   render() {
     return (
       <div>
@@ -13,20 +33,9 @@ class EventPractice extends Component {
           type="text"
           name="welcome"
           value={this.state.welcome}
-          onChange={(e) => {
-            this.setState({ welcome: e.target.value });
-          }}
+          onChange={this.handleChange}
         ></input>
-        <button
-          onClick={() => {
-            this.setState({ welcome: "" });
-            console.log(this.state.welcome);
-            const h2 = document.querySelector("h2");
-            h2.innerText = this.state.welcome;
-          }}
-        >
-          enter
-        </button>
+        <button onClick={this.handleClick}>enter</button>
       </div>
     );
   }
