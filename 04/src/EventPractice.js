@@ -5,25 +5,19 @@ class EventPractice extends Component {
     welcome: "",
   };
 
-  constructor(props) {
-    super(props);
-    /* 콜백에서 this가 작동하려면 아래와 같이 바인딩해줘야함 */
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleChange(e) {
+  /* 훨씬 깔끔하게 정리한 방법. 화살표 함수 형태로 메서드 정의하기 */
+  handleChange = (e) => {
     this.setState({
       welcome: e.target.value,
     });
-  }
+  };
 
-  handleClick() {
+  handleClick = () => {
     this.setState({ welcome: "" });
     console.log(this.state.welcome);
     const h2 = document.querySelector("h2");
     h2.innerText = this.state.welcome;
-  }
+  };
 
   render() {
     return (
