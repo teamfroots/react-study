@@ -60,15 +60,32 @@
 import React, { useState } from "react";
 
 const EventPractice = () => {
-  const [username, setUsername] = useState("");
-  const [message, setMessage] = useState("");
-  const onChangeUsername = (e) => setUsername(e.target.value);
-  const onChangerMessage = (e) => setMessage(e.target.value);
+  const [form, setForm] = useState({
+    username: "",
+    message: "",
+  });
+
+  const { username, message } = form;
+  const onChange = (e) => {
+    const nestForm = {
+      ...form,
+      [e.target.name]: e.target.value,
+    };
+    setForm(nestForm);
+  };
+
+  // const [username, setUsername] = useState("");
+  // const [message, setMessage] = useState("");
+  // const onChangeUsername = (e) => setUsername(e.target.value);
+  // const onChangerMessage = (e) => setMessage(e.target.value);
+
   const onClick = () => {
     alert(username + ":" + message);
-    setUsername("");
-    setMessage("");
+    // setUsername("");
+    // setMessage("");
+    setForm({ username: "", message: "" });
   };
+
   const onKeyPress = (e) => {
     if (e.key === "enter") {
       onClick();
@@ -84,16 +101,16 @@ const EventPractice = () => {
         type="text"
         name="username"
         value={username}
-        onChange={onChangeUsername}
+        onChange={onChange}
       ></input>
       <br />
       message:
       <input
         type="text"
-        name="welcome"
+        name="message"
         value={message}
-        onChange={onChangerMessage}
-        onKeyDown={onKeyPress}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
       ></input>
       <br />
       <button onClick={onClick}>enter</button>
