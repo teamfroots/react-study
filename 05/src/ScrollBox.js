@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class ScrollBox extends Component {
+  scrollToBottom = () => {
+    const { scrollHeight, clientHeight } = this.box;
+    this.box.scrollTop = scrollHeight - clientHeight;
+  };
+
   render() {
     const style = {
       border: "1px solid black",
@@ -19,6 +24,7 @@ class ScrollBox extends Component {
     return (
       <div
         style={style}
+        /* 해당 div를 선택하기 위한 ref */
         ref={(ref) => {
           this.box = ref;
         }}
