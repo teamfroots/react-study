@@ -24,7 +24,20 @@ const IterationSample = () => {
     setInputText("");
   };
 
-  const nameLists = names.map((name) => <li key={names.id}>{name.text}</li>);
+  const onRemove = (id) => {
+    const nextNames = names.filter((name) => name.id !== id);
+    setNames(nextNames);
+  };
+
+  //   filter, concat 다시 복습하기
+
+  const nameLists = names.map((name) => (
+    <li key={names.id} onDoubleClick={() => onRemove(name.id)}>
+      {name.text}
+    </li>
+  ));
+
+  console.log(names);
 
   return (
     <>
