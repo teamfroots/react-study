@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Info = () => {
   const [name, setName] = useState("");
   const [nickname, setNickname] = useState("");
+  useEffect(() => {
+    console.log("마운트 될떄만 실행됨");
+  }, []);
 
   const onChangeName = (e) => {
     setName(e.target.value);
