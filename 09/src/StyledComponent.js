@@ -47,7 +47,7 @@ const Button = styled.button`
 
 const StyledComponent = () => (
   <>
-    <Box color="black">
+    <Box color="lightblue">
       <Button>안녕하세요</Button>
       <Button inverted={true}>테두리만</Button>
     </Box>
