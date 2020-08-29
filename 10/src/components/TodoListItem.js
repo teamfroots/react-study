@@ -9,7 +9,7 @@ import './TodoListItem.scss';
 
 const TodoListItem = ({ todo }) => {
   const { text, checked } = todo;
-  console.log(todo);
+
   return (
     <div className="TodoListItem">
       <div className={cn('checkbox', { checked })}>
