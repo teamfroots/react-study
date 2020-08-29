@@ -1,6 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+const Mycomponent = styled.div`
+  font-size: 2rem;
+  margin-top: 50px;
+  border: 3px solid red;
+`;
+
 const Box = styled.div`
   background: ${(props) => props.color || "blue"};
   padding: 1rem;
@@ -40,10 +46,13 @@ const Button = styled.button`
 `;
 
 const StyledComponent = () => (
-  <Box color="black">
-    <Button>안녕하세요</Button>
-    <Button inverted={true}>테두리만</Button>
-  </Box>
+  <>
+    <Box color="black">
+      <Button>안녕하세요</Button>
+      <Button inverted={true}>테두리만</Button>
+    </Box>
+    <Mycomponent>안녕????? 나는 새로운 마이컴포넌트 컴포넌트야</Mycomponent>
+  </>
 );
 
 export default StyledComponent;
