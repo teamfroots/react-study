@@ -3,15 +3,24 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList.js';
 
+function createBulkTodos() {
+  const array = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할 일 ${i}`,
+      checked: false,
+    });
+  }
+  return array;
+}
+
 const App = () => {
-  const [todos, setTodos] = useState([
-    { id: 1, text: '까망이 밥주기', checked: true },
-    { id: 2, text: '청소하기', checked: true },
-    { id: 3, text: '빨래하기', checked: false },
-  ]);
+  const [todos, setTodos] = useState(createBulkTodos);
 
   const nextId = useRef(4);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onInsert = useCallback((text) => {
     const todo = {
       id: nextId.current,
