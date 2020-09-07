@@ -6,8 +6,8 @@ import Home from "./home";
 const App = () => {
   return (
     <div>
-      <Route path="/" component={Home} />
-      <Route path="about" component={About} />
+      <Route path="/" component={Home} exact={true} />
+      <Route path="/about" component={About} />
     </div>
   );
 };
